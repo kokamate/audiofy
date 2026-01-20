@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <header className="HomeHeader">
         <div className="logo">
-          <img src={Logo} alt="logo" />
+          
         </div>
 
         <input
