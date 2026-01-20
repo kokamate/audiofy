@@ -1,221 +1,157 @@
+/* ALAPOK */
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
 
-body {
+.spotify-header {
+  height: 64px;
   width: 100%;
-  height: 100%;
-  background-color: #000;
-  color: white;
-}
-
-header {
+  background-color: #121212;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: red;
-  padding: 10px;
-  max-height: 55px;
+  padding: 0 20px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
 }
 
-.logo {
-  width: 2rem;
-  height: 2rem;
-}
-
-.logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: none;
-}
-
-.nav-links {
+/* BAL OLDAL */
+.header-left {
   display: flex;
   align-items: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  background-color: blue;
+  gap: 16px;
 }
 
-.nav-links a {
-  text-decoration: none;
+.spotify-logo {
+  height: 32px;
+  cursor: pointer;
+}
+
+.home-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #1f1f1f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.home-icon svg {
+  font-size: 18px;
   color: white;
 }
 
-.search-bar {
-  width: 21.875rem;
-  min-width: 38%;
-  padding: 10px 15px;
-  border-radius: 30px;
+/* KERESŐ */
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #242424;
+  border-radius: 999px;
+  padding: 8px 16px;
+  width: 420px;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.search-container input {
+  background: transparent;
   border: none;
   outline: none;
-  background-color: #454343;
   color: white;
-  margin: 10px 0;
-  transition: width 0.3s ease;
+  margin-left: 10px;
+  width: 100%;
+  font-size: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .search-icon {
-  display: none;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
+  color: #b3b3b3;
 }
 
-@media (max-width: 750px) {
-  .search-bar {
-      display: none;
-  }
-
-  .search-icon {
-      display: block;
-  }
-
-  .nav-links .btn-Register { 
-      display: inline-block; 
-  }
-
-  .btn-Login {
-      display: inline-block;
-  }
-}
-
-@media (max-width: 1350px) {
-  .premium-donater {
-      display: none;
-  }
-}
-
-@media (max-width: 1024px) {
-  .download {
-      display: none;
-  }
-}
-
-@media (max-width: 700px) {
-  .application-download{
-      display: none;
-  }
-}
-
-header .btn-Login {
-  background: #00b50f;
-  color: white;
-  padding: 8px 20px;
-  border-radius: 25px;
-}
-
-header .btn-Login:hover {
-  background-color: #1db954;
-  color: white;
-  cursor: pointer;
-}
-
-.sidebar {
+/* JOBB OLDAL */
+.header-right {
   display: flex;
-  flex-direction: column;
-  width: 31.25rem;
-  height: 800px;
-  background-color: #333232;
-  border-radius: 13px;
-  margin: 0.625rem 0;
-  padding: 20px;
-  margin: 10px;
+  align-items: center;   /* KÖZÉPRE IGAZÍTÁS VERTIKÁLISAN */
+  gap: 18px;
+  height: 64px;
 }
 
-.sidebar-section,
-.sidebar-section-second {
-  margin-bottom: 20px;
-  background-color: #4c4c4c;
-  border-radius: 20px;
-  padding: 1.5625rem;
-}
-
-.sidebar-section h3,
-.sidebar-section-second h3 {
-  font-size: 1rem;
-  margin-bottom: 5px;
-}
-
-.btn-primary,
-.btn-secondary {
-  border: none;
-  border-radius: 25px;
-  padding: 10px 15px;
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  width: 100%;
-}
-
-.btn-primary {
-  background-color: white;
-  color: black;
-  font-weight: bold;
-}
-
-.btn-secondary {
-  background-color: white;
-  color: black;
-  font-weight: bold;
-}
-
-.sidebar-section-legal {
-  margin-top: 190px;
-  gap: 10px;
-  padding: 5px;
-}
-
-.sidebar-section-legal a {
+.nav-link {
+  color: #b3b3b3;
   text-decoration: none;
-  color: white;
-  cursor: pointer;
-}
-
-.cookie {
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.bottom-register {
-  margin: 10px 0;
-  background-color: #509bf5;
-  color: white;
-  padding: 16px 24px;
+  font-size: 14px;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 10px;
+  height: 40px;           /* fix egységes magasság */
+  cursor: pointer;
+  white-space: nowrap;
 }
 
-.bottom-register-text h4 {
-  margin: 0;
+.nav-link:hover {
+  color: white;
+}
+
+.divider {
+  height: 24px;
+  width: 1px;
+  background-color: #2a2a2a;
+}
+
+/* Ikon + szöveg sorban */
+.install svg {
+  margin-right: 6px;
   font-size: 14px;
-  font-weight: bold;
+  flex-shrink: 0;
 }
 
-.bottom-register-text p {
-  margin: 4px 0 0;
-  font-size: 14px;
-}
-
-.bottom-register button {
-  height: 55px;
-  background: white;
+/* Bejelentkezés gomb */
+.login-btn {
+  height: 40px;
+  padding: 0 22px;
+  background-color: white;
+  color: black;
   border: none;
-  padding: 10px 20px;
-  border-radius: 25px;
+  border-radius: 999px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s ease;
-  margin-right: 30px;
-  font-size: 15px;
+  display: flex;
+  align-items: center;     /* VÍZSZINTES ÉS FÜGGŐLEGES KÖZÉPRE */
+  justify-content: center;
+  line-height: 40px;
+  margin: 0;
+  transition: transform 0.2s ease;
 }
 
-.bottom-register button:hover {
-  background: #f2f2f2;
+.login-btn:hover {
   transform: scale(1.05);
+}
+
+/* ================== RESPONSIVE ================== */
+
+@media (max-width: 1100px) {
+  .search-container {
+    width: 300px;
+  }
+}
+
+@media (max-width: 900px) {
+  .header-right .nav-link:not(.install),
+  .divider {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-container {
+    display: none;
+  }
 }
