@@ -1,86 +1,221 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .HomeHeader {
-    width: 100%;
-    height: 64px;
-    background-color: #000;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    gap: 20px;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  /* LOGO */
-  .logo img {
-    height: 36px;
-    cursor: pointer;
-  }
-  
-  /* SEARCH BAR */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  color: white;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: red;
+  padding: 10px;
+  max-height: 55px;
+}
+
+.logo {
+  width: 2rem;
+  height: 2rem;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  background-color: blue;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+}
+
+.search-bar {
+  width: 21.875rem;
+  min-width: 38%;
+  padding: 10px 15px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background-color: #454343;
+  color: white;
+  margin: 10px 0;
+  transition: width 0.3s ease;
+}
+
+.search-icon {
+  display: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 750px) {
   .search-bar {
-    flex: 1;
-    max-width: 450px;
-    height: 40px;
-    border-radius: 20px;
-    border: none;
-    padding: 0 15px;
-    background-color: #242424;
-    color: white;
-    font-size: 14px;
+      display: none;
   }
-  
-  .search-bar::placeholder {
-    color: #b3b3b3;
+
+  .search-icon {
+      display: block;
   }
-  
-  .search-bar:focus {
-    outline: none;
-    background-color: #2a2a2a;
+
+  .nav-links .btn-Register { 
+      display: inline-block; 
   }
-  
-  /* NAV LINKS */
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  /* TEXT LINKS */
-  .nav-links a {
-    text-decoration: none;
-    color: #b3b3b3;
-    font-size: 14px;
-    font-weight: 600;
-  }
-  
-  .nav-links a:hover {
-    color: white;
-  }
-  
-  /* REGISTER */
-  .btn-Register {
-    color: #b3b3b3;
-  }
-  
-  /* LOGIN BUTTON */
+
   .btn-Login {
-    background-color: green;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 18px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
+      display: inline-block;
   }
-  
-  .btn-Login:hover {
-    transform: scale(1.05);
+}
+
+@media (max-width: 1350px) {
+  .premium-donater {
+      display: none;
   }
-  
+}
+
+@media (max-width: 1024px) {
+  .download {
+      display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .application-download{
+      display: none;
+  }
+}
+
+header .btn-Login {
+  background: #00b50f;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+}
+
+header .btn-Login:hover {
+  background-color: #1db954;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 31.25rem;
+  height: 800px;
+  background-color: #333232;
+  border-radius: 13px;
+  margin: 0.625rem 0;
+  padding: 20px;
+  margin: 10px;
+}
+
+.sidebar-section,
+.sidebar-section-second {
+  margin-bottom: 20px;
+  background-color: #4c4c4c;
+  border-radius: 20px;
+  padding: 1.5625rem;
+}
+
+.sidebar-section h3,
+.sidebar-section-second h3 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.btn-primary,
+.btn-secondary {
+  border: none;
+  border-radius: 25px;
+  padding: 10px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+.sidebar-section-legal {
+  margin-top: 190px;
+  gap: 10px;
+  padding: 5px;
+}
+
+.sidebar-section-legal a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.cookie {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.bottom-register {
+  margin: 10px 0;
+  background-color: #509bf5;
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.bottom-register-text h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.bottom-register-text p {
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
+.bottom-register button {
+  height: 55px;
+  background: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-right: 30px;
+  font-size: 15px;
+}
+
+.bottom-register button:hover {
+  background: #f2f2f2;
+  transform: scale(1.05);
+}
